@@ -12,7 +12,7 @@ class Human: Object{
 class Dog: Object {
    @objc dynamic var name = ""
    @objc dynamic var age = 0
-    @objc dynamic var owner: Human?
+   @objc dynamic var owner: Human?
 }
 
 class Persistance{
@@ -28,40 +28,16 @@ class Persistance{
     private let realm = try! Realm()
     
     func test(){
-       
-//        try! realm.write{
-//            let dog = Dog()
-//            dog.name = "Луша"
-//            dog.age = 8
-//            realm.add(dog)
-//
-//            let dog2 = Dog()
-//            dog2.name = "Грей"
-//            dog2.age = 6
-//            realm.add(dog2)
-//
-//        }
+
         
         let allDogs = realm.objects(Dog.self).first!
         try! realm.write{
             realm.delete(allDogs)
-//            for (index, dog) in allDogs.enumerated(){
-//                dog.age = index * 2 + 2
             }
-//        }
+
         for dog in realm.objects(Dog.self){
             print("-- \(dog.name) : \(dog.age)")
         }
-    }
-    
-//    func addObj(data: String, obj: Object){
-//
-//        let data = obj
-//
-//        try! realm.write{
-//
-//        }
-//    }
-    
+    }   
    
 }

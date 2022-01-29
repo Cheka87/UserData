@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        Persistance.shared.userName = "Alpin"
 //        print(Persistance.shared.userName)
-//        Persistance.shared.test()
+        Persistance.shared.test()
 //        Persistance.shared.test()
         // Do any additional setup after loading the view.
     }
